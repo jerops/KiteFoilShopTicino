@@ -1,0 +1,354 @@
+ 
+/* IMMEDIATE HIDE - Must be FIRST */
+html {
+    visibility: hidden;
+}
+
+html.kst-ready {
+    visibility: visible;
+}
+
+/* Only reset styles within the loader */
+.kst-loader-overlay * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Prevent body scroll when loader is active */
+body.kst-loader-active {
+    overflow: hidden;
+}
+
+.kst-loader-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #ffffff;
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: #000;
+}
+
+.kst-loader-overlay.active {
+    display: flex !important;
+}
+
+/* Smooth reveal for main content */
+body:not(.kst-loader-active) {
+    animation: contentReveal 0.8s ease-out;
+}
+
+@keyframes contentReveal {
+    0% { 
+        opacity: 0.95;
+        transform: translateY(10px);
+    }
+    100% { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.kst-loader-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 0.6s ease-out 0.2s forwards;
+}
+
+.kst-logo-wrapper {
+    position: relative;
+    margin-bottom: 3rem;
+    transform: translateY(20px);
+    opacity: 0;
+    animation: logoEntrance 1s ease-out 0.4s forwards;
+}
+
+.kst-logo-svg {
+    width: 120px;
+    height: auto;
+}
+
+/* SVG Animation CSS */
+@keyframes animate-svg-fill-1 {
+    0% { fill: transparent; }
+    100% { fill: rgb(0, 0, 0); }
+}
+.svg-elem-1 {
+    animation: animate-svg-fill-1 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 0.8s both;
+}
+
+@keyframes animate-svg-fill-2 {
+    0% { fill: transparent; }
+    100% { fill: rgb(255, 255, 255); }
+}
+.svg-elem-2 {
+    animation: animate-svg-fill-2 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 0.9s both;
+}
+
+@keyframes animate-svg-fill-3 {
+    0% { fill: transparent; }
+    100% { fill: rgb(255, 255, 255); }
+}
+.svg-elem-3 {
+    animation: animate-svg-fill-3 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 1s both;
+}
+
+@keyframes animate-svg-fill-4 {
+    0% { fill: transparent; }
+    100% { fill: rgb(255, 255, 255); }
+}
+.svg-elem-4 {
+    animation: animate-svg-fill-4 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 1.1s both;
+}
+
+@keyframes animate-svg-fill-5 {
+    0% { fill: transparent; }
+    100% { fill: rgb(255, 255, 255); }
+}
+.svg-elem-5 {
+    animation: animate-svg-fill-5 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 1.2s both;
+}
+
+@keyframes animate-svg-fill-6 {
+    0% { fill: transparent; }
+    100% { fill: rgb(255, 255, 255); }
+}
+.svg-elem-6 {
+    animation: animate-svg-fill-6 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 1.3s both;
+}
+
+@keyframes animate-svg-fill-7 {
+    0% { fill: transparent; }
+    100% { fill: rgb(255, 255, 255); }
+}
+.svg-elem-7 {
+    animation: animate-svg-fill-7 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 1.4s both;
+}
+
+.kst-brand-text {
+    color: #000;
+    font-size: 1.8rem;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+    opacity: 0;
+    transform: translateY(15px);
+    animation: textSlideUp 0.6s ease-out 2.2s forwards;
+}
+
+.kst-tagline {
+    color: #666;
+    font-size: 0.9rem;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: textSlideUp 0.6s ease-out 2.5s forwards;
+    margin-bottom: 2rem;
+}
+
+.kst-dealer-section {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: textSlideUp 0.6s ease-out 2.8s forwards;
+    margin-bottom: 3rem;
+}
+
+.kst-dealer-text {
+    color: #333;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+}
+
+.kst-dealer-location {
+    color: #666;
+    font-size: 0.65rem;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.kst-brand-logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.kst-brand-logo {
+    height: 24px;
+    width: auto;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+    object-fit: contain;
+}
+
+.kst-brand-logo:hover {
+    opacity: 1;
+}
+
+.fone-logo {
+    max-width: 50px;
+}
+
+.manera-logo {
+    max-width: 24px;
+}
+
+.kst-loading-indicator {
+    position: relative;
+    width: 200px;
+    height: 1px;
+    background: #f0f0f0;
+    margin: 0 auto;
+    opacity: 0;
+    animation: fadeIn 0.4s ease-out 3.2s forwards;
+}
+
+.kst-loading-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: #000;
+    width: 0%;
+    animation: loadingProgress 2s ease-out 3.4s forwards;
+}
+
+.kst-loading-text {
+    position: absolute;
+    top: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.75rem;
+    color: #999;
+    letter-spacing: 0.1em;
+    opacity: 0;
+    animation: fadeIn 0.4s ease-out 3.6s forwards;
+}
+
+.kst-minimal-dots {
+    display: flex;
+    gap: 8px;
+    margin-top: 3rem;
+    opacity: 0;
+    animation: fadeIn 0.4s ease-out 3.8s forwards;
+}
+
+.kst-dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #ccc;
+    animation: dotPulse 1.4s ease-in-out infinite;
+}
+
+.kst-dot:nth-child(1) { animation-delay: 0s; }
+.kst-dot:nth-child(2) { animation-delay: 0.2s; }
+.kst-dot:nth-child(3) { animation-delay: 0.4s; }
+
+/* Animations */
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+@keyframes logoEntrance {
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes textSlideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes loadingProgress {
+    to { width: 100%; }
+}
+
+@keyframes dotPulse {
+    0%, 100% { 
+        background: #ccc;
+        transform: scale(1);
+    }
+    50% { 
+        background: #000;
+        transform: scale(1.2);
+    }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .kst-logo-svg {
+        width: 100px;
+    }
+    
+    .kst-brand-text {
+        font-size: 1.5rem;
+    }
+    
+    .kst-tagline {
+        font-size: 0.8rem;
+    }
+
+    .kst-dealer-text {
+        font-size: 0.65rem;
+    }
+
+    .kst-dealer-location {
+        font-size: 0.6rem;
+    }
+
+    .kst-brand-logos {
+        gap: 1.5rem;
+    }
+
+    .kst-brand-logo {
+        height: 20px;
+    }
+
+    .fone-logo {
+        max-width: 44px;
+    }
+
+    .manera-logo {
+        max-width: 20px;
+    }
+    
+    .kst-loading-indicator {
+        width: 150px;
+    }
+
+    .kst-minimal-dots {
+        gap: 6px;
+        margin-top: 2.5rem;
+    }
+
+    .kst-dot {
+        width: 3px;
+        height: 3px;
+    }
+}
+  
